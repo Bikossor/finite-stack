@@ -2398,6 +2398,21 @@ img {
 </nav>
 <div class="container container-main">
 	<div class="content-wrap">
+		<section class="tsd-panel tsd-comment">
+			<div class="tsd-comment tsd-typography">
+				<div class="lead">
+					<p>A limitable LIFO data structure</p>
+				</div>
+				<dl class="tsd-comment-tags">
+					<dt>author</dt>
+					<dd><p>André Lichtenthäler (Bikossor)</p>
+					</dd>
+					<dt>license</dt>
+					<dd><p>GPL-3.0</p>
+					</dd>
+				</dl>
+			</div>
+		</section>
 		<section class="tsd-panel tsd-hierarchy">
 			<h3>Hierarchy</h3>
 			<ul class="tsd-hierarchy">
@@ -2442,19 +2457,19 @@ img {
 				<a name="constructor" class="tsd-anchor"></a>
 				<h3>constructor</h3>
 				<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">new <wbr>Finite<wbr>Stack<span class="tsd-signature-symbol">(</span>limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="finitestack.html" class="tsd-signature-type">FiniteStack</a></li>
+					<li class="tsd-signature tsd-kind-icon">new <wbr>Finite<wbr>Stack<span class="tsd-signature-symbol">(</span>limit<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="finitestack.html" class="tsd-signature-type">FiniteStack</a></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L3">finite-stack.ts:3</a></li>
+								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L8">finite-stack.ts:8</a></li>
 							</ul>
 						</aside>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
-								<h5>limit: <span class="tsd-signature-type">any</span></h5>
+								<h5>limit: <span class="tsd-signature-type">number</span></h5>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <a href="finitestack.html" class="tsd-signature-type">FiniteStack</a></h4>
@@ -2467,10 +2482,10 @@ img {
 			<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 				<a name="limit" class="tsd-anchor"></a>
 				<h3>Limit</h3>
-				<div class="tsd-signature tsd-kind-icon">Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+				<div class="tsd-signature tsd-kind-icon">Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L2">finite-stack.ts:2</a></li>
+						<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L7">finite-stack.ts:7</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2480,7 +2495,7 @@ img {
 				<div class="tsd-signature tsd-kind-icon">Stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L3">finite-stack.ts:3</a></li>
+						<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L8">finite-stack.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -2497,9 +2512,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L25">finite-stack.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L44">finite-stack.ts:44</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Empty the <code>FiniteStack</code></p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 					</li>
 				</ul>
@@ -2508,22 +2528,33 @@ img {
 				<a name="contains" class="tsd-anchor"></a>
 				<h3>contains</h3>
 				<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-					<li class="tsd-signature tsd-kind-icon">contains<span class="tsd-signature-symbol">(</span>searchElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fromIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					<li class="tsd-signature tsd-kind-icon">contains<span class="tsd-signature-symbol">(</span>searchElement<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, fromIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 				</ul>
 				<ul class="tsd-descriptions">
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L29">finite-stack.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L53">finite-stack.ts:53</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Checks if the <code>FiniteStack</code> contains a specific value</p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>searchElement: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The value to search for</p>
+								</div>
 							</li>
 							<li>
-								<h5>fromIndex: <span class="tsd-signature-type">any</span></h5>
+								<h5>fromIndex: <span class="tsd-signature-type">number</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The index at which to begin to search for</p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2540,9 +2571,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L17">finite-stack.ts:17</a></li>
+								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L30">finite-stack.ts:30</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns the last element from the <code>FiniteStack</code></p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 					</li>
 				</ul>
@@ -2557,9 +2593,14 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L21">finite-stack.ts:21</a></li>
+								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L37">finite-stack.ts:37</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Returns and removes the last element from the <code>FiniteStack</code></p>
+							</div>
+						</div>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 					</li>
 				</ul>
@@ -2574,13 +2615,21 @@ img {
 					<li class="tsd-description">
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/05616e5/src/finite-stack.ts#L9">finite-stack.ts:9</a></li>
+								<li>Defined in <a href="https://github.com/Bikossor/finite-stack/blob/0a5e51b/src/finite-stack.ts#L19">finite-stack.ts:19</a></li>
 							</ul>
 						</aside>
+						<div class="tsd-comment tsd-typography">
+							<div class="lead">
+								<p>Adds one ore more elements to the end of the <code>FiniteStack</code></p>
+							</div>
+						</div>
 						<h4 class="tsd-parameters-title">Parameters</h4>
 						<ul class="tsd-parameters">
 							<li>
 								<h5>value: <span class="tsd-signature-type">any</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<p>The element(s) to add</p>
+								</div>
 							</li>
 						</ul>
 						<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
