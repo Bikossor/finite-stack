@@ -5,7 +5,8 @@
   "main": "finite-stack.js",
   "scripts": {
     "test": "jest",
-    "build": "tsc && gulp"
+    "build": "tsc && gulp",
+    "doc": "typedoc"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-header": "^2.0.9",
     "gulp-uglify": "^3.0.2",
-    "pump": "^3.0.0"
+    "pump": "^3.0.0",
+    "typedoc": "^0.16.9"
   }
 }
