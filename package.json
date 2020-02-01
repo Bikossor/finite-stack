@@ -1,0 +1,27 @@
+{
+  "name": "finite-stack",
+  "version": "1.0.0",
+  "description": "A limitable LIFO data structure",
+  "main": "finite-stack.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bikossor/finite-stack.git"
+  },
+  "keywords": [
+    "limitable",
+    "LIFO",
+    "stack",
+    "data",
+    "structure",
+    "backend"
+  ],
+  "author": "André Lichtenthäler",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Bikossor/finite-stack/issues"
+  },
+  "homepage": "https://github.com/Bikossor/finite-stack#readme"
+}
