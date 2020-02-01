@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "None",
+        "outDir": "dist/",
+        "pretty": true,
+        "inlineSourceMap": true,
+        "declaration": true
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "typedocOptions": {
+        "inputFiles": [
+            "src/"
+        ],
+        "mode": "file",
+        "out": "docs",
+        "theme": "minimal"
+    }
+}
