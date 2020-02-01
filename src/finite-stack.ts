@@ -1,4 +1,6 @@
 class FiniteStack {
+    Limit: any;
+    Stack: any[];
     constructor(limit) {
         this.Limit = limit;
         this.Stack = new Array();

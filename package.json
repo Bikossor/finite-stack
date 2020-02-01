@@ -4,7 +4,8 @@
   "description": "A limitable LIFO data structure",
   "main": "finite-stack.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "tsc && gulp"
   },
   "repository": {
     "type": "git",
@@ -23,5 +24,12 @@
   "bugs": {
     "url": "https://github.com/Bikossor/finite-stack/issues"
   },
-  "homepage": "https://github.com/Bikossor/finite-stack#readme"
+  "homepage": "https://github.com/Bikossor/finite-stack#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-header": "^2.0.9",
+    "gulp-uglify": "^3.0.2",
+    "pump": "^3.0.0"
+  }
 }
