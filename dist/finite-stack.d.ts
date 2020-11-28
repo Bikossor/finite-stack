@@ -3,23 +3,23 @@
  * @author André Lichtenthäler (Bikossor)
  * @license GPL-3.0
  */
-declare class FiniteStack {
+declare class FiniteStack<T> {
     Limit: number;
-    Stack: any[];
+    Stack: T[];
     constructor(limit: number);
     /**
      * Adds one ore more elements to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
-    push(value: any): void;
+    push(value: T): void;
     /**
      * Returns the last element from the `FiniteStack`
      */
-    peek(): any;
+    peek(): T;
     /**
      * Returns and removes the last element from the `FiniteStack`
      */
-    pop(): any;
+    pop(): T;
     /**
      * Empty the `FiniteStack`
      */
@@ -29,5 +29,5 @@ declare class FiniteStack {
      * @param searchElement The value to search for
      * @param fromIndex The index at which to begin to search for
      */
-    contains(searchElement: any, fromIndex: number): boolean;
+    contains(searchElement: T, fromIndex: number): boolean;
 }

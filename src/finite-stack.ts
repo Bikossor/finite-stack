@@ -3,20 +3,20 @@
  * @author André Lichtenthäler (Bikossor)
  * @license GPL-3.0
  */
-class FiniteStack {
+class FiniteStack<T> {
     Limit: number;
-    Stack: any[];
+    Stack: T[];
 
     constructor(limit: number) {
         this.Limit = limit;
-        this.Stack = new Array();
+        this.Stack = new Array<T>();
     }
 
     /**
      * Adds one ore more elements to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
-    push(value: any): void {
+    push(value: T): void {
         if (this.Stack.length >= this.Limit) {
             this.Stack.shift();
         }
@@ -27,14 +27,14 @@ class FiniteStack {
     /**
      * Returns the last element from the `FiniteStack`
      */
-    peek(): any {
+    peek(): T {
         return this.Stack[this.Stack.length - 1];
     }
 
     /**
      * Returns and removes the last element from the `FiniteStack`
      */
-    pop(): any {
+    pop(): T {
         return this.Stack.pop();
     }
 
@@ -50,7 +50,7 @@ class FiniteStack {
      * @param searchElement The value to search for
      * @param fromIndex The index at which to begin to search for
      */
-    contains(searchElement: any, fromIndex: number): boolean {
+    contains(searchElement: T, fromIndex: number): boolean {
         return this.Stack.indexOf(searchElement, fromIndex) > -1;
     }
 }
