@@ -3,7 +3,7 @@
  * @author André Lichtenthäler (Bikossor)
  * @license GPL-3.0
  */
-class FiniteStack<T> {
+export class FiniteStack<T> {
     Limit: number;
     Stack: T[];
 

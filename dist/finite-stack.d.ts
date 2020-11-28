@@ -3,7 +3,7 @@
  * @author André Lichtenthäler (Bikossor)
  * @license GPL-3.0
  */
-declare class FiniteStack<T> {
+export declare class FiniteStack<T> {
     Limit: number;
     Stack: T[];
     constructor(limit: number);
