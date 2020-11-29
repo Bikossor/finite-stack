@@ -5,7 +5,7 @@
  */
 export declare class FiniteStack<T> {
     private _limit;
-    private _stack;
+    private _items;
     private _length;
     get limit(): number;
     get items(): Array<T>;
