@@ -7,36 +7,36 @@ Object.defineProperty(exports, "__esModule", { value: true });
  */
 var FiniteStack = /** @class */ (function () {
     function FiniteStack(limit) {
-        this.Limit = limit;
-        this.Stack = new Array();
+        this.limit = limit;
+        this.stack = new Array();
     }
     /**
      * Adds one ore more elements to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
     FiniteStack.prototype.push = function (value) {
-        if (this.Stack.length >= this.Limit) {
-            this.Stack.shift();
+        if (this.stack.length >= this.limit) {
+            this.stack.shift();
         }
-        this.Stack.push(value);
+        this.stack.push(value);
     };
     /**
      * Returns the last element from the `FiniteStack`
      */
     FiniteStack.prototype.peek = function () {
-        return this.Stack[this.Stack.length - 1];
+        return this.stack[this.stack.length - 1];
     };
     /**
      * Returns and removes the last element from the `FiniteStack`
      */
     FiniteStack.prototype.pop = function () {
-        return this.Stack.pop();
+        return this.stack.pop();
     };
     /**
      * Empty the `FiniteStack`
      */
     FiniteStack.prototype.clear = function () {
-        this.Stack = new Array();
+        this.stack = new Array();
     };
     /**
      * Checks if the `FiniteStack` contains a specific value
@@ -44,7 +44,7 @@ var FiniteStack = /** @class */ (function () {
      * @param fromIndex The index at which to begin to search for
      */
     FiniteStack.prototype.contains = function (searchElement, fromIndex) {
-        return this.Stack.indexOf(searchElement, fromIndex) > -1;
+        return this.stack.indexOf(searchElement, fromIndex) > -1;
     };
     return FiniteStack;
 }());
