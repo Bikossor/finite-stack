@@ -5,12 +5,16 @@
  */
 export class FiniteStack<T> {
     limit: number;
-    stack: T[];
+    private _stack: T[];
     length: number;
+
+    public get items(): Array<T> {
+        return this._stack;
+    }
 
     constructor(limit: number) {
         this.limit = limit;
-        this.stack = new Array<T>();
+        this._stack = new Array<T>();
         this.length = 0;
     }
 
@@ -20,17 +24,17 @@ export class FiniteStack<T> {
      */
     push(value: T): void {
         if (this.length >= this.limit) {
-            this.stack.shift();
+            this._stack.shift();
         }
 
-        this.length = this.stack.push(value);
+        this.length = this._stack.push(value);
     }
 
     /**
      * Returns the last element from the `FiniteStack`
      */
     peek(): T {
-        return this.stack[this.length - 1];
+        return this._stack[this.length - 1];
     }
 
     /**
@@ -38,14 +42,14 @@ export class FiniteStack<T> {
      */
     pop(): T {
         this.length--;
-        return this.stack.pop();
+        return this._stack.pop();
     }
 
     /**
      * Empty the `FiniteStack`
      */
     clear(): void {
-        this.stack = new Array();
+        this._stack = new Array();
         this.length = 0;
     }
 
@@ -55,6 +59,6 @@ export class FiniteStack<T> {
      * @param fromIndex The index at which to begin to search for
      */
     contains(searchElement: T, fromIndex: number): boolean {
-        return this.stack.indexOf(searchElement, fromIndex) > -1;
+        return this._stack.indexOf(searchElement, fromIndex) > -1;
     }
 }
