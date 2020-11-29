@@ -4,10 +4,12 @@
  * @license GPL-3.0
  */
 export declare class FiniteStack<T> {
-    limit: number;
-    private stack;
-    length: number;
+    private _limit;
+    private _stack;
+    private _length;
+    get limit(): number;
     get items(): Array<T>;
+    get length(): number;
     constructor(limit: number);
     /**
      * Adds one ore more elements to the end of the `FiniteStack`

@@ -4,18 +4,26 @@
  * @license GPL-3.0
  */
 export class FiniteStack<T> {
-    limit: number;
+    private _limit: number;
     private _stack: T[];
-    length: number;
+    private _length: number;
+
+    public get limit(): number {
+        return this._limit;
+    }
 
     public get items(): Array<T> {
         return this._stack;
     }
 
+    public get length(): number {
+        return this._length;
+    }
+
     constructor(limit: number) {
-        this.limit = limit;
+        this._limit = limit;
         this._stack = new Array<T>();
-        this.length = 0;
+        this._length = 0;
     }
 
     /**
@@ -23,25 +31,25 @@ export class FiniteStack<T> {
      * @param value The element(s) to add
      */
     push(value: T): void {
-        if (this.length >= this.limit) {
+        if (this._length >= this._limit) {
             this._stack.shift();
         }
 
-        this.length = this._stack.push(value);
+        this._length = this._stack.push(value);
     }
 
     /**
      * Returns the last element from the `FiniteStack`
      */
     peek(): T {
-        return this._stack[this.length - 1];
+        return this._stack[this._length - 1];
     }
 
     /**
      * Returns and removes the last element from the `FiniteStack`
      */
     pop(): T {
-        this.length--;
+        this._length--;
         return this._stack.pop();
     }
 
@@ -50,7 +58,7 @@ export class FiniteStack<T> {
      */
     clear(): void {
         this._stack = new Array();
-        this.length = 0;
+        this._length = 0;
     }
 
     /**
