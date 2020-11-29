@@ -6,6 +6,7 @@
 export declare class FiniteStack<T> {
     limit: number;
     stack: T[];
+    length: number;
     constructor(limit: number);
     /**
      * Adds one ore more elements to the end of the `FiniteStack`

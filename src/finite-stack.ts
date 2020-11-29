@@ -6,10 +6,12 @@
 export class FiniteStack<T> {
     limit: number;
     stack: T[];
+    length: number;
 
     constructor(limit: number) {
         this.limit = limit;
         this.stack = new Array<T>();
+        this.length = 0;
     }
 
     /**
@@ -17,24 +19,25 @@ export class FiniteStack<T> {
      * @param value The element(s) to add
      */
     push(value: T): void {
-        if (this.stack.length >= this.limit) {
+        if (this.length >= this.limit) {
             this.stack.shift();
         }
 
-        this.stack.push(value);
+        this.length = this.stack.push(value);
     }
 
     /**
      * Returns the last element from the `FiniteStack`
      */
     peek(): T {
-        return this.stack[this.stack.length - 1];
+        return this.stack[this.length - 1];
     }
 
     /**
      * Returns and removes the last element from the `FiniteStack`
      */
     pop(): T {
+        this.length--;
         return this.stack.pop();
     }
 
@@ -43,6 +46,7 @@ export class FiniteStack<T> {
      */
     clear(): void {
         this.stack = new Array();
+        this.length = 0;
     }
 
     /**
