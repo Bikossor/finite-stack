@@ -4,8 +4,8 @@
  * @license GPL-3.0
  */
 export declare class FiniteStack<T> {
-    Limit: number;
-    Stack: T[];
+    limit: number;
+    stack: T[];
     constructor(limit: number);
     /**
      * Adds one ore more elements to the end of the `FiniteStack`
