@@ -5,8 +5,9 @@
  */
 export declare class FiniteStack<T> {
     limit: number;
-    stack: T[];
+    private stack;
     length: number;
+    get items(): Array<T>;
     constructor(limit: number);
     /**
      * Adds one ore more elements to the end of the `FiniteStack`
