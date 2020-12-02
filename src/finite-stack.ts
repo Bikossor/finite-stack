@@ -27,7 +27,7 @@ export class FiniteStack<T> {
     }
 
     /**
-     * Adds one ore more elements to the end of the `FiniteStack`
+     * Adds one element to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
     push(value: T): void {

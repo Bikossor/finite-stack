@@ -33,7 +33,7 @@ var FiniteStack = /** @class */ (function () {
         configurable: true
     });
     /**
-     * Adds one ore more elements to the end of the `FiniteStack`
+     * Adds one element to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
     FiniteStack.prototype.push = function (value) {
