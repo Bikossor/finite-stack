@@ -1,6 +1,6 @@
 {
   "name": "finite-stack",
-  "version": "1.0.0",
+  "version": "2.0.1",
   "description": "A limitable, type-safe LIFO data structure for JavaScript and TypeScript.",
   "main": "finite-stack.js",
   "scripts": {
