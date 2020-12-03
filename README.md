@@ -1,5 +1,5 @@
 # finite-stack
-A limitable LIFO data structure.
+A limitable, type-safe LIFO data structure for JavaScript and TypeScript.
 
 ## Installing
 ### Node.js environment
