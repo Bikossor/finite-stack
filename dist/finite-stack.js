@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * A limitable LIFO data structure
  * @author André Lichtenthäler (Bikossor)
@@ -5,36 +7,60 @@
  */
 var FiniteStack = /** @class */ (function () {
     function FiniteStack(limit) {
-        this.Limit = limit;
-        this.Stack = new Array();
+        this._limit = limit;
+        this._items = new Array();
+        this._length = 0;
     }
+    Object.defineProperty(FiniteStack.prototype, "limit", {
+        get: function () {
+            return this._limit;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FiniteStack.prototype, "items", {
+        get: function () {
+            return this._items;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(FiniteStack.prototype, "length", {
+        get: function () {
+            return this._length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     /**
-     * Adds one ore more elements to the end of the `FiniteStack`
+     * Adds one element to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
     FiniteStack.prototype.push = function (value) {
-        if (this.Stack.length >= this.Limit) {
-            this.Stack.shift();
+        if (this._length >= this._limit) {
+            this._items.shift();
         }
-        this.Stack.push(value);
+        this._length = this._items.push(value);
     };
     /**
      * Returns the last element from the `FiniteStack`
      */
     FiniteStack.prototype.peek = function () {
-        return this.Stack[this.Stack.length - 1];
+        return this._items[this._length - 1];
     };
     /**
      * Returns and removes the last element from the `FiniteStack`
      */
     FiniteStack.prototype.pop = function () {
-        return this.Stack.pop();
+        this._length--;
+        return this._items.pop();
     };
     /**
      * Empty the `FiniteStack`
      */
     FiniteStack.prototype.clear = function () {
-        this.Stack = new Array();
+        this._items = new Array();
+        this._length = 0;
     };
     /**
      * Checks if the `FiniteStack` contains a specific value
@@ -42,8 +68,9 @@ var FiniteStack = /** @class */ (function () {
      * @param fromIndex The index at which to begin to search for
      */
     FiniteStack.prototype.contains = function (searchElement, fromIndex) {
-        return this.Stack.indexOf(searchElement, fromIndex) > -1;
+        return this._items.indexOf(searchElement, fromIndex) > -1;
     };
     return FiniteStack;
 }());
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmluaXRlLXN0YWNrLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2Zpbml0ZS1zdGFjay50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7OztHQUlHO0FBQ0g7SUFJSSxxQkFBWSxLQUFhO1FBQ3JCLElBQUksQ0FBQyxLQUFLLEdBQUcsS0FBSyxDQUFDO1FBQ25CLElBQUksQ0FBQyxLQUFLLEdBQUcsSUFBSSxLQUFLLEVBQUssQ0FBQztJQUNoQyxDQUFDO0lBRUQ7OztPQUdHO0lBQ0gsMEJBQUksR0FBSixVQUFLLEtBQVE7UUFDVCxJQUFJLElBQUksQ0FBQyxLQUFLLENBQUMsTUFBTSxJQUFJLElBQUksQ0FBQyxLQUFLLEVBQUU7WUFDakMsSUFBSSxDQUFDLEtBQUssQ0FBQyxLQUFLLEVBQUUsQ0FBQztTQUN0QjtRQUVELElBQUksQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxDQUFDO0lBQzNCLENBQUM7SUFFRDs7T0FFRztJQUNILDBCQUFJLEdBQUo7UUFDSSxPQUFPLElBQUksQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLEtBQUssQ0FBQyxNQUFNLEdBQUcsQ0FBQyxDQUFDLENBQUM7SUFDN0MsQ0FBQztJQUVEOztPQUVHO0lBQ0gseUJBQUcsR0FBSDtRQUNJLE9BQU8sSUFBSSxDQUFDLEtBQUssQ0FBQyxHQUFHLEVBQUUsQ0FBQztJQUM1QixDQUFDO0lBRUQ7O09BRUc7SUFDSCwyQkFBSyxHQUFMO1FBQ0ksSUFBSSxDQUFDLEtBQUssR0FBRyxJQUFJLEtBQUssRUFBRSxDQUFDO0lBQzdCLENBQUM7SUFFRDs7OztPQUlHO0lBQ0gsOEJBQVEsR0FBUixVQUFTLGFBQWdCLEVBQUUsU0FBaUI7UUFDeEMsT0FBTyxJQUFJLENBQUMsS0FBSyxDQUFDLE9BQU8sQ0FBQyxhQUFhLEVBQUUsU0FBUyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUM7SUFDN0QsQ0FBQztJQUNMLGtCQUFDO0FBQUQsQ0FBQyxBQWxERCxJQWtEQyJ9
+exports.FiniteStack = FiniteStack;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZmluaXRlLXN0YWNrLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vc3JjL2Zpbml0ZS1zdGFjay50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBOzs7O0dBSUc7QUFDSDtJQWlCSSxxQkFBWSxLQUFhO1FBQ3JCLElBQUksQ0FBQyxNQUFNLEdBQUcsS0FBSyxDQUFDO1FBQ3BCLElBQUksQ0FBQyxNQUFNLEdBQUcsSUFBSSxLQUFLLEVBQUssQ0FBQztRQUM3QixJQUFJLENBQUMsT0FBTyxHQUFHLENBQUMsQ0FBQztJQUNyQixDQUFDO0lBaEJELHNCQUFXLDhCQUFLO2FBQWhCO1lBQ0ksT0FBTyxJQUFJLENBQUMsTUFBTSxDQUFDO1FBQ3ZCLENBQUM7OztPQUFBO0lBRUQsc0JBQVcsOEJBQUs7YUFBaEI7WUFDSSxPQUFPLElBQUksQ0FBQyxNQUFNLENBQUM7UUFDdkIsQ0FBQzs7O09BQUE7SUFFRCxzQkFBVywrQkFBTTthQUFqQjtZQUNJLE9BQU8sSUFBSSxDQUFDLE9BQU8sQ0FBQztRQUN4QixDQUFDOzs7T0FBQTtJQVFEOzs7T0FHRztJQUNILDBCQUFJLEdBQUosVUFBSyxLQUFRO1FBQ1QsSUFBSSxJQUFJLENBQUMsT0FBTyxJQUFJLElBQUksQ0FBQyxNQUFNLEVBQUU7WUFDN0IsSUFBSSxDQUFDLE1BQU0sQ0FBQyxLQUFLLEVBQUUsQ0FBQztTQUN2QjtRQUVELElBQUksQ0FBQyxPQUFPLEdBQUcsSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDM0MsQ0FBQztJQUVEOztPQUVHO0lBQ0gsMEJBQUksR0FBSjtRQUNJLE9BQU8sSUFBSSxDQUFDLE1BQU0sQ0FBQyxJQUFJLENBQUMsT0FBTyxHQUFHLENBQUMsQ0FBQyxDQUFDO0lBQ3pDLENBQUM7SUFFRDs7T0FFRztJQUNILHlCQUFHLEdBQUg7UUFDSSxJQUFJLENBQUMsT0FBTyxFQUFFLENBQUM7UUFDZixPQUFPLElBQUksQ0FBQyxNQUFNLENBQUMsR0FBRyxFQUFFLENBQUM7SUFDN0IsQ0FBQztJQUVEOztPQUVHO0lBQ0gsMkJBQUssR0FBTDtRQUNJLElBQUksQ0FBQyxNQUFNLEdBQUcsSUFBSSxLQUFLLEVBQUUsQ0FBQztRQUMxQixJQUFJLENBQUMsT0FBTyxHQUFHLENBQUMsQ0FBQztJQUNyQixDQUFDO0lBRUQ7Ozs7T0FJRztJQUNILDhCQUFRLEdBQVIsVUFBUyxhQUFnQixFQUFFLFNBQWlCO1FBQ3hDLE9BQU8sSUFBSSxDQUFDLE1BQU0sQ0FBQyxPQUFPLENBQUMsYUFBYSxFQUFFLFNBQVMsQ0FBQyxHQUFHLENBQUMsQ0FBQyxDQUFDO0lBQzlELENBQUM7SUFDTCxrQkFBQztBQUFELENBQUMsQUFsRUQsSUFrRUM7QUFsRVksa0NBQVcifQ==

@@ -3,12 +3,16 @@
  * @author André Lichtenthäler (Bikossor)
  * @license GPL-3.0
  */
-declare class FiniteStack<T> {
-    Limit: number;
-    Stack: T[];
+export declare class FiniteStack<T> {
+    private _limit;
+    private _items;
+    private _length;
+    get limit(): number;
+    get items(): Array<T>;
+    get length(): number;
     constructor(limit: number);
     /**
-     * Adds one ore more elements to the end of the `FiniteStack`
+     * Adds one element to the end of the `FiniteStack`
      * @param value The element(s) to add
      */
     push(value: T): void;
