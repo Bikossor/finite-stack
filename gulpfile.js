@@ -1,31 +1,15 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var header = require('gulp-header');
-var pump = require('pump');
+const gulp = require("gulp");
+const ts = require("gulp-typescript");
+const del = require("del");
 
-var fileName = "finite-stack";
-var folderDestination = "dist/";
-var package = require('./package.json');
-var headerString = ['/*',
-	'<%= pkg.name %> v<%= pkg.version %> (<%= pkg.license %>) |',
-	'<%= pkg.author %> |',
-	'<%= pkg.homepage %>',
-	'*/\n'
-].join(' ');
+const tsProject = ts.createProject("tsconfig.json");
 
-gulp.task("build-js", function (callback) {
-	pump([
-		gulp.src("dist/finite-stack.js"),
-		uglify(),
-		concat(fileName + ".min.js"),
-		header(headerString, {
-			pkg: package
-		}),
-		gulp.dest(folderDestination)
-	], callback);
+gulp.task("clean-up", function () {
+  return del("dist/**", { force: true });
 });
 
-gulp.task("default",
-	gulp.series("build-js")
-);
+gulp.task("build-typescript", function () {
+  return tsProject.src().pipe(tsProject()).js.pipe(gulp.dest("dist"));
+});
+
+gulp.task("default", gulp.series("clean-up", "build-typescript"));
