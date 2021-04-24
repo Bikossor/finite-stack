@@ -3,6 +3,9 @@
   "version": "2.0.1",
   "description": "A limitable, type-safe LIFO data structure for JavaScript and TypeScript.",
   "main": "finite-stack.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "test": "jest",
     "build": "tsc && gulp",
