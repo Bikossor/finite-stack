@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "test": "jest",
-    "build": "tsc && gulp",
+    "build": "gulp",
+    "prepare": "gulp",
     "doc": "typedoc"
   },
   "repository": {
@@ -30,11 +31,10 @@
   },
   "homepage": "https://github.com/Bikossor/finite-stack#readme",
   "devDependencies": {
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-header": "^2.0.9",
-    "gulp-uglify": "^3.0.2",
-    "pump": "^3.0.0",
-    "typedoc": "^0.16.9"
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typedoc": "^0.16.9",
+    "typescript": "^4.2.4"
   }
 }
