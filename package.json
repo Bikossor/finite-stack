@@ -9,6 +9,7 @@
   "scripts": {
     "test": "jest",
     "build": "gulp",
+    "prepare": "gulp",
     "doc": "typedoc"
   },
   "repository": {
